@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -49,5 +50,9 @@ function NewColorForm({ addColor }) {
     </div>
   );
 }
+
+NewColorForm.propTypes = {
+  addColor: PropTypes.func.isRequired,
+};
 
 export default NewColorForm;

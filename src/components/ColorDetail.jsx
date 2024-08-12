@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useParams, Link, Navigate } from "react-router-dom";
 
 function ColorDetail({ colors }) {
@@ -16,5 +17,14 @@ function ColorDetail({ colors }) {
     </div>
   );
 }
+
+ColorDetail.propTypes = {
+  colors: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      color: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
 
 export default ColorDetail;
